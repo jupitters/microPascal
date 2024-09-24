@@ -1,4 +1,5 @@
 #include "include/io.h"
+#include "include/lexer.h"
 #include <string.h>
 #include <stdlib.h>
 #define _GNU_SOURCE
@@ -87,4 +88,16 @@ char* mp_ler_arquivo(const char* nomeArquivo)
     }
 
     return buffer;
+}
+
+void mp_escrita_tokens(token_T* token, lexer_T* lexer)
+{
+    FILE *fp = fopen("examples/tokens.lex", "a");
+
+    int coluna = lexer->col;
+    coluna -= strlen(token->valor);
+
+    fprintf(fp, " Linha:%d | Coluna:%d %s", lexer->lin, coluna, token_to_str(token));
+
+    fclose(fp);
 }

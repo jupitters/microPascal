@@ -7,6 +7,7 @@ void comp_microPascal(char* src)
 {
     lexer_T* lexer = init_lexer(src);
     token_T* tok = 0;
+    FILE *fp = fopen("examples/tokens.lex", "w");
 
     while((tok = lexer_prox_token(lexer))->tipo != T_EOF)
     {
@@ -14,7 +15,10 @@ void comp_microPascal(char* src)
         {
             continue;
         }
-        printf("%s\n", token_to_str(tok));
+
+        // printf("%s\n", token_to_str(tok));
+
+        mp_escrita_tokens(tok, lexer);
     }
 }
 
