@@ -97,7 +97,19 @@ void mp_escrita_tokens(token_T* token, lexer_T* lexer)
     int coluna = lexer->col;
     coluna -= strlen(token->valor);
 
-    fprintf(fp, " Linha:%d | Coluna:%d %s", lexer->lin, coluna, token_to_str(token));
+    fprintf(fp, "Linha:%d | Coluna:%d %s", lexer->lin, coluna, token_to_str(token));
+
+    fclose(fp);
+}
+
+void mp_escrita_var(token_T* token, lexer_T* lexer)
+{
+    FILE *fp = fopen("examples/tokens.lex", "a");
+
+    int coluna = lexer->col;
+    coluna -= strlen(token->valor);
+
+    fprintf(fp, "Linha:%d | Coluna:%d %s", lexer->lin, coluna, token_to_var(token));
 
     fclose(fp);
 }

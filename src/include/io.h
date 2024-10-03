@@ -7,4 +7,5 @@
 size_t getline(char **lineptr, size_t *n, FILE *stream);
 char* mp_ler_arquivo(const char* nomeArquivo);
 void mp_escrita_tokens(token_T* token, lexer_T* lexer);
+void mp_escrita_var(token_T* token, lexer_T* lexer);
 #endif

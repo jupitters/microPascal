@@ -1,68 +1,46 @@
- Linha:1 | Coluna:1 <PAL_RES, program>
- Linha:1 | Coluna:9 <T_ID, Exemplo>
- Linha:1 | Coluna:16 <SMB_SEM, ;>
- Linha:3 | Coluna:1 <PAL_RES, var>
- Linha:4 | Coluna:5 <T_ID, x>
- Linha:4 | Coluna:6 <SMB_COM, ,>
- Linha:4 | Coluna:8 <T_ID, y>
- Linha:4 | Coluna:10 <OP_DEC, :>
- Linha:4 | Coluna:12 <PAL_RES, integer>
- Linha:4 | Coluna:19 <SMB_SEM, ;>
- Linha:5 | Coluna:5 <T_ID, z>
- Linha:5 | Coluna:7 <OP_DEC, :>
- Linha:5 | Coluna:9 <PAL_RES, real>
- Linha:5 | Coluna:13 <SMB_SEM, ;>
- Linha:7 | Coluna:1 <PAL_RES, begin>
- Linha:8 | Coluna:5 <T_ID, x>
- Linha:8 | Coluna:7 <OP_ASS, :=>
- Linha:8 | Coluna:10 <NUM_INT, 10>
- Linha:8 | Coluna:12 <SMB_SEM, ;>
- Linha:9 | Coluna:5 <T_ID, y>
- Linha:9 | Coluna:7 <OP_ASS, :=>
- Linha:9 | Coluna:10 <NUM_INT, 20>
- Linha:9 | Coluna:12 <SMB_SEM, ;>
- Linha:10 | Coluna:5 <T_ID, z>
- Linha:10 | Coluna:7 <OP_ASS, :=>
- Linha:10 | Coluna:10 <T_ID, x>
- Linha:10 | Coluna:12 <OP_AD, +>
- Linha:10 | Coluna:14 <T_ID, y>
- Linha:10 | Coluna:16 <OP_MUL, *>
- Linha:10 | Coluna:18 <NUM_FLT, 2.5>
- Linha:10 | Coluna:21 <SMB_SEM, ;>
- Linha:12 | Coluna:5 <PAL_RES, if>
- Linha:12 | Coluna:8 <T_ID, x>
- Linha:12 | Coluna:10 <OP_GT, >>
- Linha:12 | Coluna:12 <T_ID, y>
- Linha:12 | Coluna:14 <PAL_RES, then>
- Linha:13 | Coluna:9 <T_ID, x>
- Linha:13 | Coluna:10 <OP_ASS, :h=>
- Linha:13 | Coluna:13 <T_ID, x>
- Linha:13 | Coluna:14 <OP_MIN, ->
- Linha:13 | Coluna:15 <NUM_INT, 1>
- Linha:14 | Coluna:5 <PAL_RES, else>
- Linha:15 | Coluna:9 <T_ID, y>
- Linha:15 | Coluna:11 <OP_ASS, :=>
- Linha:15 | Coluna:14 <T_ID, y>
- Linha:15 | Coluna:16 <OP_AD, +>
- Linha:15 | Coluna:18 <NUM_INT, 1>
- Linha:15 | Coluna:19 <SMB_SEM, ;>
- Linha:16 | Coluna:5 <PAL_RES, while>
- Linha:16 | Coluna:11 <T_ID, z>
- Linha:16 | Coluna:13 <OP_LE, <=>
- Linha:16 | Coluna:16 <NUM_INT, 100>
- Linha:16 | Coluna:20 <PAL_RES, do>
- Linha:17 | Coluna:5 <PAL_RES, begin>
- Linha:18 | Coluna:5 <T_ID, z>
- Linha:18 | Coluna:7 <OP_ASS, :=>
- Linha:18 | Coluna:10 <T_ID, z>
- Linha:18 | Coluna:12 <OP_MUL, *>
- Linha:18 | Coluna:14 <NUM_FLT, 1.5>
- Linha:18 | Coluna:17 <SMB_SEM, ;>
- Linha:19 | Coluna:5 <T_ID, x>
- Linha:19 | Coluna:7 <OP_ASS, :e=>
- Linha:19 | Coluna:11 <T_ID, x>
- Linha:19 | Coluna:13 <OP_AD, +>
- Linha:19 | Coluna:15 <NUM_INT, 2>
- Linha:20 | Coluna:5 <T_ID, ehd>
- Linha:21 | Coluna:1 <PAL_RES, end>
- Linha:21 | Coluna:4 <SMB_EOP, .>
+Linha:1 | Coluna:1 <PAL_RES, program>
+Linha:2 | Coluna:5 <T_ID, 0>
+Linha:2 | Coluna:7 <OP_ASS, :=>
+Linha:2 | Coluna:10 <T_ID, 1>
+Linha:2 | Coluna:12 <OP_AD, +>
+Linha:2 | Coluna:14 <T_ID, 2>
+Linha:2 | Coluna:16 <OP_MUL, *>
+Linha:2 | Coluna:21 <T_ID, 3>
+Linha:2 | Coluna:22 <SMB_SEM, ;>
+Linha:4 | Coluna:5 <PAL_RES, if>
+Linha:4 | Coluna:8 <T_ID, 4>
+Linha:4 | Coluna:10 <OP_GT, >>
+Linha:4 | Coluna:12 <T_ID, 5>
+Linha:4 | Coluna:14 <PAL_RES, then>
+Linha:5 | Coluna:9 <T_ID, 6>
+Linha:5 | Coluna:10 <OP_ASS, :=>
+Linha:5 | Coluna:12 <T_ID, 7>
+Linha:5 | Coluna:13 <OP_MIN, ->
+Linha:5 | Coluna:14 <NUM_INT, 1>
+Linha:6 | Coluna:5 <PAL_RES, else>
+Linha:7 | Coluna:9 <T_ID, 8>
+Linha:7 | Coluna:11 <OP_ASS, :=>
+Linha:7 | Coluna:14 <T_ID, 9>
+Linha:7 | Coluna:16 <OP_AD, +>
+Linha:7 | Coluna:18 <NUM_INT, 1>
+Linha:7 | Coluna:19 <SMB_SEM, ;>
+Linha:8 | Coluna:5 <PAL_RES, while>
+Linha:8 | Coluna:11 <T_ID, 10>
+Linha:8 | Coluna:13 <OP_LE, <=>
+Linha:8 | Coluna:16 <NUM_INT, 100>
+Linha:8 | Coluna:20 <PAL_RES, do>
+Linha:9 | Coluna:5 <PAL_RES, begin>
+Linha:10 | Coluna:5 <T_ID, 11>
+Linha:10 | Coluna:7 <OP_ASS, :eg=>
+Linha:10 | Coluna:12 <T_ID, 12>
+Linha:10 | Coluna:14 <OP_MUL, *>
+Linha:10 | Coluna:16 <NUM_FLT, 1.5>
+Linha:10 | Coluna:19 <SMB_SEM, ;>
+Linha:11 | Coluna:5 <T_ID, 13>
+Linha:11 | Coluna:7 <OP_ASS, :=>
+Linha:11 | Coluna:10 <T_ID, 14>
+Linha:11 | Coluna:12 <OP_AD, +>
+Linha:11 | Coluna:14 <NUM_INT, 2>
+Linha:12 | Coluna:5 <PAL_RES, end>
+Linha:13 | Coluna:1 <PAL_RES, end>
+Linha:13 | Coluna:4 <SMB_EOP, .>

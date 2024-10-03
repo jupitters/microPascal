@@ -95,6 +95,7 @@ token_T* lexer_parse_id(lexer_T* lexer)
             return init_token(valor, PAL_RES);
         }
     }
+    
 
     lexer->i -= 1;
     lexer->c = lexer->src[lexer->i];
@@ -140,6 +141,22 @@ token_T* lexer_parse_numero(lexer_T* lexer)
 
     if (lexer->c == '.')
     {
+        if (!isdigit(lexer_peek(lexer, 1)))
+        {
+            valor = realloc(valor, (strlen(valor) + 2) * sizeof(char));
+            strcat(valor, (char[]){lexer->c, 0});
+            lexer_avanco(lexer);
+
+            printf("[Lexer]: Numero de ponto flutuante '%s' nao fechado corretamente em: Linha %d | Coluna: %d\n", valor, lexer->lin, (lexer->col));
+            //exit(1);
+
+            lexer->i -= 2;
+            lexer->c = lexer->src[lexer->i];
+            lexer->col += strlen(valor);
+
+            return lexer_avanco_momento(lexer, T_UNK);
+        }
+
         valor = realloc(valor, (strlen(valor) + 2) * sizeof(char));
         strcat(valor, (char[]){lexer->c, 0});
         lexer_avanco(lexer);

@@ -59,3 +59,15 @@ char* token_to_str(token_T* token)
 
     return str;
 }
+
+char* token_to_var(token_T* token)
+{
+    const char* tipo_str = tipo_token_to_str(token->tipo);
+    const char* template = "<%s, %d>\n";
+
+    char* str = calloc(strlen(tipo_str) + strlen(template) + 8, sizeof(char));
+
+    sprintf(str, template, tipo_str, token->variavel);
+
+    return str;
+}

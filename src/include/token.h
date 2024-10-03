@@ -3,6 +3,9 @@
 typedef struct TOKEN_STRUCT
 {
     char* valor;
+    int variavel;
+    struct TOKEN_STRUCT *proximo;
+
     enum // os tipos de token
     {
         // Operadores
@@ -45,4 +48,6 @@ typedef struct TOKEN_STRUCT
 token_T* init_token(char* valor, int tipo);
 
 char* token_to_str(token_T* token);
+
+char* token_to_var(token_T* token);
 #endif 
