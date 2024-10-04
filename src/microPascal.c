@@ -2,6 +2,7 @@
 #include "include/lexer.h"
 #include "include/io.h"
 #include <stdlib.h>
+#include <string.h>
 
 void comp_microPascal(char* src)
 {
@@ -20,18 +21,19 @@ void comp_microPascal(char* src)
 
         if(tok->tipo == T_ID)
         {
-            lista = token_add_lista(lista, tok, indice);
+            if (buscarToken(tok, lista) == NULL)
+            {
+                lista = token_add_lista(lista, tok, indice);
+                tok->variavel = indice;
+                indice++;
+            }
 
-            token_T *id = buscarToken(tok, lista);
-
-            mp_escrita_var(id, lexer);
-
-            indice += 1;
+            tok = buscarToken(tok, lista);
+            mp_escrita_var(tok, lexer);
+            continue; // tirar se quiser verificar qual o valor da variavel
         }
-        else
-        {
-            mp_escrita_tokens(tok, lexer);
-        }
+        
+         mp_escrita_tokens(tok, lexer);
         // printf("%s\n", token_to_str(tok));
 
         
@@ -47,7 +49,7 @@ void comp_microPascal_arquivo(const char* arquivo)
     free(src);
 }
 
-token_T *aloc_token()
+token_T *alloc_token()
 {
     token_T *novoToken = (token_T*) malloc(sizeof(token_T));
     if(novoToken == NULL)
@@ -61,7 +63,7 @@ token_T *aloc_token()
 
 token_T *token_add_lista(token_T *lista, token_T *token, int indice)
 {
-    token_T *addToken = aloc_token();
+    token_T *addToken = alloc_token();
 
     addToken->proximo = NULL;
     addToken->tipo = token->tipo;
@@ -76,7 +78,7 @@ token_T *token_add_lista(token_T *lista, token_T *token, int indice)
     {
         token_T *ptr = lista;
         while (ptr->proximo != NULL)
-        {
+        {   
             ptr = ptr->proximo;
         }
         ptr->proximo = addToken;
@@ -85,15 +87,17 @@ token_T *token_add_lista(token_T *lista, token_T *token, int indice)
     }
 }
 
-token_T *buscarToken(token_T *token, token_T *lista)
+token_T* buscarToken(token_T *token, token_T *lista)
 {
     for(token_T *ptr = lista; ptr != NULL; ptr = ptr->proximo)
     {
-        if (ptr->valor == token->valor)
+        if (strcmp(token->valor, ptr->valor) == 0)
         {
             return ptr;
         }
     }
+
+    return NULL;
 }
 
 void liberar(token_T *lista)

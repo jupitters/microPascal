@@ -147,7 +147,7 @@ token_T* lexer_parse_numero(lexer_T* lexer)
             strcat(valor, (char[]){lexer->c, 0});
             lexer_avanco(lexer);
 
-            printf("[Lexer]: Numero de ponto flutuante '%s' nao fechado corretamente em: Linha %d | Coluna: %d\n", valor, lexer->lin, (lexer->col));
+            printf("[Lexer]: Numero de ponto flutuante '%s' nao fechado corretamente em Linha: %d | Coluna: %d\n", valor, lexer->lin, (lexer->col));
             //exit(1);
 
             lexer->i -= 2;
@@ -225,7 +225,7 @@ token_T* lexer_prox_token(lexer_T* lexer)
             case '.': return lexer_avanco_momento(lexer, SMB_EOP);
             case '\0': break;
             default: 
-                printf("[Lexer]: Caractere desconhecido '%c' em: Linha %d | Coluna: %d\n", lexer->c, lexer->lin, (lexer->col - 1));
+                printf("[Lexer]: Caractere desconhecido '%c' em Linha: %d | Coluna: %d\n", lexer->c, lexer->lin, (lexer->col - 1));
                 //exit(1);
                 return lexer_avanco_momento(lexer, T_UNK);
                 break; 
