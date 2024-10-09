@@ -40,6 +40,7 @@ void comp_microPascal(char* src)
     }
 
     liberar(lista);
+    fclose(fp);
 }
 
 void comp_microPascal_arquivo(const char* arquivo)
