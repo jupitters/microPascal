@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <errno.h>
 
+/*
 size_t getline(char **lineptr, size_t *n, FILE *stream) {
     char *bufptr = NULL;
     char *p = bufptr;
@@ -57,6 +58,7 @@ size_t getline(char **lineptr, size_t *n, FILE *stream) {
 
     return p - bufptr - 1;
 }
+*/
 
 char* mp_ler_arquivo(const char* nomeArquivo)
 {
