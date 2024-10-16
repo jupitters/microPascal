@@ -65,7 +65,7 @@ char* mp_ler_arquivo(const char* nomeArquivo)
     FILE *fp;
     char * line = NULL;
     size_t len = 0;
-    ssize_t read;
+    size_t read;
     
     fp = fopen(nomeArquivo, "rb");
     if (fp == NULL)
