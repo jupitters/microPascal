@@ -47,6 +47,8 @@ typedef struct TOKEN_STRUCT
 
 token_T* init_token(char* valor, int tipo);
 
+const char* tipo_token_to_str(int tipo);
+
 char* token_to_str(token_T* token);
 
 char* token_to_var(token_T* token);

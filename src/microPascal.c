@@ -1,5 +1,6 @@
 #include "include/microPascal.h"
 #include "include/lexer.h"
+#include "include/parser.h"
 #include "include/io.h"
 #include <stdlib.h>
 #include <string.h>
@@ -7,7 +8,20 @@
 void comp_microPascal(char* src)
 {
     lexer_T* lexer = init_lexer(src);
+    parser_T* parser = init_parser(lexer);
+    AST_T* raiz = parser_parse(parser);
     token_T* tok = 0;
+
+    /*
+    while((tok = lexer_prox_token(lexer))->tipo != T_EOF)
+    {
+        printf(("%s\n"), token_to_str(tok));
+        printf(("%s\n"), token_to_var(tok));
+    }
+    */
+    //printf("%ld\n", raiz->children->itens);
+
+
     token_T* lista = NULL;
     int indice = 0;
     FILE *fp = fopen("examples/tokens.lex", "w");
@@ -35,7 +49,6 @@ void comp_microPascal(char* src)
         
          mp_escrita_tokens(tok, lexer);
         // printf("%s\n", token_to_str(tok));
-
         
     }
 

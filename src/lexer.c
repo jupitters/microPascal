@@ -91,15 +91,16 @@ token_T* lexer_parse_id(lexer_T* lexer)
             lexer->i -= 1;
             lexer->c = lexer->src[lexer->i];
             lexer->col += strlen(valor);
-
+            
             return init_token(valor, PAL_RES);
         }
     }
     
-
+    
     lexer->i -= 1;
     lexer->c = lexer->src[lexer->i];
     lexer->col += strlen(valor);
+    
 
     return init_token(valor, T_ID);
 }
@@ -127,6 +128,8 @@ token_T* lexer_parse_duploSinal(lexer_T* lexer, int tipo)
         case 3: return init_token(valor, OP_LE);
         case 4: return init_token(valor, OP_NE);
     }
+
+    return init_token(valor, T_UNK);
 }
 
 token_T* lexer_parse_numero(lexer_T* lexer)

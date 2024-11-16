@@ -12,7 +12,7 @@ token_T* init_token(char* valor, int tipo)
     return token;
 }
 
-static const char* tipo_token_to_str(int tipo)
+const char* tipo_token_to_str(int tipo)
 {
     switch (tipo)
     {
