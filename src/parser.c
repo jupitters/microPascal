@@ -145,7 +145,13 @@ AST_T* parser_parse_b(parser_T* parser)
 AST_T* parser_expressao_alg(parser_T* parser)
 {
     while (parser->token->tipo != SMB_SEM && strcmp(parser->token->valor, "end") != 0)
-    {       
+    { 
+        if (parser->token->tipo != NUM_INT && parser->token->tipo != NUM_FLT && parser->token->tipo != T_ID)
+        {
+            printf("[Parser]: Esperado uma expressao.\n");
+            exit(1);
+        }      
+            
         if (parser->token->tipo == T_ID)
         {
             parser_consome(parser, T_ID);
@@ -155,13 +161,8 @@ AST_T* parser_expressao_alg(parser_T* parser)
                 exit(1);
             }
         }
-        if (parser->token->tipo != NUM_INT && parser->token->tipo != NUM_FLT && parser->token->tipo != T_ID)
-        {
-            printf("[Parser]: Esperado uma expressao.\n");
-            exit(1);
-        }
 
-        if (parser->token->tipo == NUM_INT)
+        else if (parser->token->tipo == NUM_INT)
         {
             parser_consome(parser, NUM_INT);
             if (parser->token->tipo == NUM_INT || parser->token->tipo == NUM_FLT || parser->token->tipo == T_ID)
@@ -176,9 +177,9 @@ AST_T* parser_expressao_alg(parser_T* parser)
             if (parser->token->tipo == NUM_INT || parser->token->tipo == NUM_FLT || parser->token->tipo == T_ID)
             {
                 printf("[Parser]: Variavel ou numero no local incorreto.\n");
+                exit(1);
             }
         }
-         
 
         if (parser->token->tipo == OP_AD)
         {
